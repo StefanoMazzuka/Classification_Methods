@@ -1,6 +1,9 @@
 package vista.GUI;
 
 import javax.swing.JPanel;
+
+import java.awt.Dimension;
+
 import javax.swing.BoxLayout;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -19,14 +22,15 @@ public class JPDatos extends JPanel {
 	 * Create the panel.
 	 */
 	public JPDatos() {
-		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
+		setPreferredSize(new Dimension(600, 300));
 		
 		JTextArea textArea = new JTextArea();
 		textArea.setText(Datos.getDatos1String());
 		textArea.setEditable(false);
 		JScrollPane scroll = new JScrollPane (textArea, 
 				   JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-		scroll.setBorder(new TitledBorder("Clase " + Datos.getClases().get(0) + ": "));
+		scroll.setBorder(new TitledBorder(Datos.getClases().get(0) + ": "));
 		add(scroll);
 		
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {
@@ -40,7 +44,7 @@ public class JPDatos extends JPanel {
 		textArea2.setEditable(false);
 		JScrollPane scroll2 = new JScrollPane (textArea2, 
 				   JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-		scroll2.setBorder(new TitledBorder("Clase " + Datos.getClases().get(1) + ": "));
+		scroll2.setBorder(new TitledBorder(Datos.getClases().get(1) + ": "));
 		add(scroll2);
 		
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {

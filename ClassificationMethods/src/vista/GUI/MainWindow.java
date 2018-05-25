@@ -35,7 +35,7 @@ public class MainWindow extends JFrame {
 			public void run() {
 				try {
 					MainWindow frame = new MainWindow();
-					frame.setSize(900, 600);
+					frame.setSize(600, 600);
 					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
 				} catch (Exception e) {

@@ -7,8 +7,8 @@ import javax.swing.JTextArea;
 
 import Datos.Datos;
 
-import java.awt.Color;
 import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -28,6 +28,7 @@ public class JPEjemplos extends JPanel {
 	 */
 	public JPEjemplos() {
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		setPreferredSize(new Dimension(600, 300));
 		
 		textArea = new JTextArea();
 		textArea.setText(Datos.getEjemplosString());
@@ -37,9 +38,8 @@ public class JPEjemplos extends JPanel {
 		
 		add(scroll);
 		
-		JButton btnAnadirEjemplo = new JButton("A\u00F1adir Ejemplo");
+		JButton btnAnadirEjemplo = new JButton("NUEVO");
 		add(btnAnadirEjemplo);
-		btnAnadirEjemplo.setBackground(Color.orange);
 		btnAnadirEjemplo.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
 		btnAnadirEjemplo.addActionListener(new ActionListener() {
@@ -49,9 +49,7 @@ public class JPEjemplos extends JPanel {
 				// TODO Auto-generated method stub
 				String seleccion = JOptionPane.showInputDialog(
 						   null,
-						   "Nuevo ejemplo:",
-						   "Añadir ejemplo",
-						   JOptionPane.PLAIN_MESSAGE);
+						   "Ejemplo:", "NUEVO", JOptionPane.PLAIN_MESSAGE);
 				
 				if(seleccion != null){
 					String[] lineas = seleccion.split(",");

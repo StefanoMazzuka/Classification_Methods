@@ -89,7 +89,7 @@ public final class Datos {
 		for(double[] ej: ejemplos){
 			for(int i = 0; i < ej.length; i++){
 				if(i == 0)
-					cadena += (pos+1) + "º = "+ ej[i];
+					cadena += (pos+1) + ") "+ ej[i];
 				else
 					cadena += ", " + ej[i];
 			}
