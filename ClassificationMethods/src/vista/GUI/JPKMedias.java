@@ -16,6 +16,8 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 
 import java.awt.Color;
+import java.awt.Font;
+import javax.swing.SwingConstants;
 
 public class JPKMedias extends JPanel {
 
@@ -32,6 +34,14 @@ public class JPKMedias extends JPanel {
 	public JPKMedias() {
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		setBackground(Color.WHITE);
+		
+		JPanel panel = new JPanel();
+		add(panel);
+		
+		JLabel lblKMedias = new JLabel("K- MEDIAS");
+		panel.add(lblKMedias);
+		lblKMedias.setHorizontalAlignment(SwingConstants.LEFT);
+		lblKMedias.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		
 		JPanel centros = new JPanel();
 		centros.setPreferredSize(new Dimension(100, 100));

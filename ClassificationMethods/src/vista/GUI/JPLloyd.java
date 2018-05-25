@@ -15,6 +15,7 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 
 import java.awt.Color;
+import java.awt.Font;
 
 public class JPLloyd extends JPanel {
 	
@@ -31,6 +32,13 @@ public class JPLloyd extends JPanel {
 	public JPLloyd() {
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		setBackground(Color.WHITE);
+		
+		JPanel panel = new JPanel();
+		add(panel);
+		
+		JLabel lblNewLabel = new JLabel("LLOYD");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		panel.add(lblNewLabel);
 		
 		JPanel centros = new JPanel();
 		centros.setPreferredSize(new Dimension(100, 100));

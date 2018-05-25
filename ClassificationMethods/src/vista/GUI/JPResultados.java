@@ -34,7 +34,7 @@ public class JPResultados extends JPanel {
 		JPanel panel = new JPanel();
 		add(panel);
 		
-		btnComprobar = new JButton("Comprobar");
+		btnComprobar = new JButton("RUN");
 		panel.add(btnComprobar);
 	}
 	

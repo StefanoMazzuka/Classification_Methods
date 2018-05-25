@@ -7,16 +7,21 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+
 import Datos.Datos;
 
 public final class ReadEjemplos{
 
 	public static void read() throws FileNotFoundException, IOException, NumberFormatException{
-		File file = new File("Iris2Clases.txt");
-
+		String ruta = System.getProperty("user.dir") + File.separator;
+		
+		File file = new File(ruta + "Iris2Clases.txt");
+		
 		ArrayList<ArrayList<String>> clase1 = new ArrayList<ArrayList<String>>();
-		ArrayList<ArrayList<String>> clase2 = new ArrayList<ArrayList<String>>();
-		try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+		ArrayList<ArrayList<String>> clase2 = new ArrayList<ArrayList<String>>();	
+		try (
+			FileReader fr = new FileReader(file);	
+			BufferedReader br = new BufferedReader(fr)) {
 			String line;
 			int i = 0;
 			while ((line = br.readLine()) != null) {
@@ -66,7 +71,8 @@ public final class ReadEjemplos{
 		Datos.addDatosClases(datosClase2);
 
 		// Ejemplos
-		File file2 = new File("TestIris01.txt");
+
+		File file2 = new File(ruta + "TestIris01.txt");
 
 		try (BufferedReader br = new BufferedReader(new FileReader(file2))) {
 			String line;
@@ -89,7 +95,7 @@ public final class ReadEjemplos{
 			throw e;
 		}
 
-		File file3 = new File("TestIris02.txt");
+		File file3 = new File(ruta + "TestIris02.txt");
 
 		try (BufferedReader br = new BufferedReader(new FileReader(file3))) {
 			String line;
@@ -112,7 +118,7 @@ public final class ReadEjemplos{
 			throw e;
 		}
 
-		File file4 = new File("TestIris03.txt");
+		File file4 = new File(ruta + "TestIris03.txt");
 
 		try (BufferedReader br = new BufferedReader(new FileReader(file4))) {
 			String line;

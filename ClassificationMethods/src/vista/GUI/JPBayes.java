@@ -10,6 +10,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import java.awt.Font;
 
 public class JPBayes extends JPanel {
 	
@@ -19,11 +21,20 @@ public class JPBayes extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private JPResultados panelResultados;
 	private JPEjemplos panelEjemplos;
+	private JPanel panel;
+	private JLabel lblNewLabel;
 	/**
 	 * Create the panel.
 	 */
 	public JPBayes() {
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		
+		panel = new JPanel();
+		add(panel);
+		
+		lblNewLabel = new JLabel("BAYES");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		panel.add(lblNewLabel);
 		
 		JPDatos datos = new JPDatos();
 		add(datos);
